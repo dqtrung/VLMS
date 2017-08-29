@@ -1,0 +1,136 @@
+footer {
+    background-color: #EDEDED;
+}
+
+th {
+    text-align: center;
+}
+
+img.corner-left-login {
+    position: absolute;
+    top: 0px;
+}
+
+img.corner-right-login {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+.page-title .title_left {
+    width: 100%;
+}
+
+.category_panel {
+    background: #2A3F54;
+    color: #fff;
+    padding: 5px 17px;
+}
+
+.category_title {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+}
+
+.category_title>span {
+    color: #fff;
+}
+
+span.name_borrowing,
+.register_success {
+    color: #4f81bd;
+    font-weight: bold;
+}
+
+.show_more,
+.show_less {
+    color: #4f81bd;
+    cursor: pointer;
+}
+
+.more,
+.less {
+    color: black;
+}
+
+.borrowing {
+    color: green;
+    font-weight: bold;
+}
+
+.overdue {
+    color: red;
+    font-weight: bold;
+}
+
+.extending {
+    color: #ff9900;
+    font-weight: bold;
+}
+
+.active_user {
+    color: green;
+    font-weight: bold;
+}
+
+.lock_user {
+    color: red;
+    font-weight: bold;
+}
+
+div.change_avatar:hover img {
+    cursor: pointer;
+}
+
+div.change_avatar button {
+    position: absolute;
+    display: none;
+    top: 0;
+}
+
+div.change_avatar:hover button {
+    display: block;
+}
+
+.img-container img {
+    max-width: 100%;
+}
+
+.avatar-middle {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.bt-center-row {
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.status-center {
+    text-align: center;
+    margin: 0px auto;
+}
+
+.center-parent {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+}
+
+.preview {
+    width: 220px;
+    height: 220px;
+    overflow: hidden;
+    background-image: url(../images/user-default.jpg);
+}
+
+@media only screen and (max-width:498px) {
+    img.corner-left-login {
+        display: none;
+    }
+    img.corner-right-login {
+        display: none;
+    }
+}

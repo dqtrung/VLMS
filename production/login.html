@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Virtual Library Management System</title>
+
+    <!-- Bootstrap -->
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="../vendors/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="../build/css/custom.min.css" rel="stylesheet">
+
+    <!-- My Custom Styles -->
+    <link href="../build/css/custom-styles.css" rel="stylesheet">
+</head>
+
+<body class="login">
+    <img class="corner-left-login" src="../build/images/corner-left-login.png">
+    <div>
+        <div class="login_wrapper">
+            <div class="animate form login_form">
+                <section class="login_content">
+                    <form id="sign_in_form">
+                        <h1>Sign in</h1>
+                        <div>
+                            <input type="text" class="form-control" placeholder="Username" name="username_txt" id="username_txt" />
+                        </div>
+                        <div>
+                            <input type="password" class="form-control" placeholder="Password" name="password_txt" id="password_txt" />
+                        </div>
+                        <div>
+                            <a class="btn btn-default submit" id="login_btn">Log in</a>
+                            <a class="reset_pass" href="javascript:void(0)" id="to_forgot">Forgot your password?</a>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="separator">
+                            <div class="clearfix"></div>
+                            <br />
+                            <div>
+                                <h1><i class="fa fa-modx"></i> Virtual Library <br/>Management System</h1>
+                                <p>©2017 All Rights Reserved. Privacy and Terms</p>
+                            </div>
+                        </div>
+                    </form>
+                    <form id="reset_pwd_form" style="display: none">
+                        <h1>Reset Password</h1>
+                        <div>
+                            Enter your email to receive new password
+                        </div>
+                        <div>
+                            <input type="email" class="form-control" placeholder="Email" />
+                        </div>
+                        <div>
+                            <a class="btn btn-default submit" href="javascript:void(0)">Send Me</a>
+                            <a class="btn btn-default submit" href="javascript:void(0)" id="back_sign_in">Back</a>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="separator">
+                            <div class="clearfix"></div>
+                            <br />
+                            <div>
+                                <h1><i class="fa fa-modx"></i> Virtual Library <br/>Management System</h1>
+                                <p>©2017 All Rights Reserved. Privacy and Terms</p>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+    <img class="corner-right-login" src="../build/images/corner-right-login.png">
+
+    <!-- jQuery -->
+    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+
+    <!-- My custom scripts -->
+    <script type="text/javascript">
+        $('a#to_forgot').click(function() {
+            $('#reset_pwd_form').show();
+            $('#sign_in_form').hide();
+        });
+        $('a#back_sign_in').click(function() {
+            $('#reset_pwd_form').hide();
+            $('#sign_in_form').show();
+        });
+        $('a#login_btn').click(function() {
+            var username = $('input#username_txt').val();
+            if (username == 'systemadmin') {
+                window.location.href = './system-admin/index.html';
+            } else if (username == 'libraryadmin') {
+                window.location.href = './library-admin/index.html';
+            } else if (username == 'librarian') {
+                window.location.href = './librarian/index.html';
+            } else {
+                window.location.href = './user/index.html';
+            }
+        });
+    </script>
+</body>
+
+</html>

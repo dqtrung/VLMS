@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Virtual Library Management System</title>
+
+  
+    <!-- Bootstrap -->
+    <link href="../../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="../../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+
+    <!-- bootstrap-progressbar -->
+    <link href="../../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="../../vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
+    <!-- bootstrap-daterangepicker -->
+    <link href="../../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="../../build/css/custom.min.css" rel="stylesheet">
+</head>
+
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="index.html" class="site_title"><i class="fa fa-modx"></i> <span>Virtual Library</span></a>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <!-- menu profile quick info -->
+                    <div class="profile clearfix">
+                        <div class="profile_pic">
+                            <img src="../../build/images/img.jpg" alt="..." class="img-circle profile_img">
+                        </div>
+                        <div class="profile_info">
+                            <span>Welcome,</span>
+                            <h2>Le Viet Toan</h2>
+                        </div>
+                    </div>
+                    <!-- /menu profile quick info -->
+
+                    <br />
+
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>Librarian</h3>
+                            <ul class="nav side-menu">
+                                <li class="active"><a href="index.html"><i class="fa fa-home"></i> Home </a>
+                                </li>
+                                
+
+                                <li><a><i class="fa fa-desktop"></i> Advanced Search <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="search_status.html">Status</a></li>
+                                        <li><a href="search_type.html">Type</a></li>
+                                        <li><a href="search_manufactory.html">Manufactory</a></li>
+                                        <li><a href="search_contributor.html">Contributor</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-desktop"></i> History <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="Item_history.html">Item History</a></li>
+                                        <li><a href="User_history.html">User History</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <!-- /sidebar menu -->
+
+                    <!-- /menu footer buttons -->
+                    <div class="sidebar-footer hidden-small">
+                        <a data-toggle="tooltip" data-placement="top" title="FullScreen" onclick="toggleFull()">
+                            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Sign out" href="login.html">
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                    <!-- /menu footer buttons -->
+                </div>
+            </div>
+
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <nav>
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="../../build/images/img.jpg" alt="">Le Viet Toan
+                                    <span class=" fa fa-angle-down"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                    <li><a href="../profile.html"> Profile</a></li>
+                                    <li><a href="../login.html"><i class="fa fa-sign-out pull-right"></i> Sign Out</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- /top navigation -->
+               
+            <!-- page content -->
+                <div class="right_col" role="main">
+                <div class="">
+                    <div class="page-title">
+                        <div class="title_left">
+                            <h3>User History</h3>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    
+                    <div class="row">
+                     
+                          <div class="col-sm-9 col-sm-push-2">
+                                                
+                                    <div class="input-group">
+                                          <input type="text" placeholder="Input User's Name..." class="form-control">
+                                          <span class="input-group-btn">
+
+                                          <button type="button"  class="btn btn-primary">Search!</button>
+                                          </span>
+                                    </div>
+                         </div>
+                     
+                      </div>
+                      <br><br>
+                   
+
+
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_content">
+                                    <div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+                                        <div class="profile_img">
+                                            <div id="crop-avatar">
+                                                <!-- Current avatar -->
+                                                <img class="img-responsive avatar-view" src="../../build/images/picture.jpg" alt="Avatar">
+                                            </div>
+                                        </div>
+                                        <h3>Nguyễn Thanh Phi</h3>
+
+                                        <ul class="list-unstyled user_data">
+                                            <li><i class="fa fa-map-marker user-profile-icon"></i> Phú Yên
+                                            </li>
+
+                                            <li>
+                                                <i class="fa fa-shield user-profile-icon"></i> tuonglaivinhhang1
+                                            </li>
+
+                                            <li>
+                                                <i class="fa fa-briefcase user-profile-icon"></i> FSoft
+                                            </li>
+
+                                            <li>
+                                                <i class="fa fa-envelope user-profile-icon"></i> tuonglaivinhhang1@gmail.com
+                                            </li>
+                                        </ul>
+
+                                        
+                                    </div>
+                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                        
+                    <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                      <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Contribution</a>
+                        </li>
+                        <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Item Borrowing</a>
+                        </li>
+                        <li role="presentation" class=""><a href="#tab_content3" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">Extension</a>
+                        </li>
+                        <li role="presentation" class=""><a href="#tab_content4" role="tab" id="profile-tab3" data-toggle="tab" aria-expanded="false">Transfer</a>
+                        </li>
+                       
+
+                      </ul>
+                      <div id="myTabContent" class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+                             <div id="collapseOne1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                          <div class="panel-body">
+                            <table class="table table-striped">
+                              <thead>
+                                <tr>
+                                <th>STT</th>
+                                  <th>ID</th>
+                                  <th>Name</th>
+                                  <th>Type</th>
+                                   <th>Image</th>
+                                <th>Contribution Date</th>
+                                <th>Marks</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th scope="row">1</th>
+                                  <td>VLMS18111</td>
+                                  <td>Giáo trình ASP.NET MVC 6</td>
+                                  <td>Book</td>
+                                  <td>Updating....</td>
+                                   <td>22-01-2017</td>                                   
+                                  <td>Sách in màu</td>
+                                    
+                                </tr>
+                                <tr>
+                                  <th scope="row">2</th>
+                                  <td>VLMS18112</td>
+                                  <td>Đĩa phim Tây Du Ký phần 2</td>
+                                  <td>CD/DVD</td>
+                                  <td>Updating....</td>
+                                   <td>23-02-2017</td> 
+                                 
+                                  <td>Đĩa gốc sản xuất 2010</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">3</th>
+                                   <td>VLMS18113</td>
+                                  <td>Loa 4 tất 500W Arirang</td>
+                                  <td>Karaoke/Technology</td>
+                                  <td>Updating....</td>
+                                   <td>20-01-2017</td> 
+                                 
+                                  <td>Loa chính hãng. Đã sử dụng 2 năm</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">4</th>
+                                   <td>VLMS19291</td>
+                                  <td>Laptop HP cũ</td>
+                                  <td>Laptop/Technology</td>
+                                  <td>Updating....</td>
+                                   <td>20-01-2017</td>   
+                                  <td>Laptop cũ đã sử dụng 3 năm</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
+                          <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+                             <div id="collapseOne1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                          <div class="panel-body">
+                            <table class="table table-striped">
+                              <thead>
+                                <tr>
+                                <th>STT</th>
+                                  <th>ID</th>
+                                  <th>Name</th>
+                                  <th>Type</th>
+                                   <th>Image</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Marks</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th scope="row">1</th>
+                                  <td>VLMS18111</td>
+                                  <td>Giáo trình ASP.NET MVC 6</td>
+                                  <td>Book</td>
+                                  <td>Updating....</td>
+                                   <td>22-01-2017</td> 
+                                   <td>22-03-2017</td>                                   
+                                  <td>Sách in màu</td>
+                                    
+                                </tr>
+                                <tr>
+                                  <th scope="row">2</th>
+                                  <td>VLMS18112</td>
+                                  <td>Đĩa phim Tây Du Ký phần 2</td>
+                                  <td>CD/DVD</td>
+                                  <td>Updating....</td>
+                                   <td>23-02-2017</td> 
+                                 <td>22-04-2017</td>
+                                  <td>Đĩa gốc sản xuất 2010</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">3</th>
+                                   <td>VLMS18113</td>
+                                  <td>Loa 4 tất 500W Arirang</td>
+                                  <td>Karaoke/Technology</td>
+                                  <td>Updating....</td>
+                                   <td>20-01-2017</td> 
+                                 <td>12-05-2017</td>
+                                  <td>Loa chính hãng. Đã sử dụng 2 năm</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">4</th>
+                                   <td>VLMS19291</td>
+                                  <td>Laptop HP cũ</td>
+                                  <td>Laptop/Technology</td>
+                                  <td>Updating....</td>
+                                   <td>20-01-2017</td>  
+                                   <td>22-04-2017</td> 
+                                  <td>Laptop cũ đã sử dụng 3 năm</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab2">
+                            <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+                             <div id="collapseOne1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                          <div class="panel-body">
+                            <table class="table table-striped">
+                              <thead>
+                                <tr>
+                                <th>STT</th>
+                                  <th>ID</th>
+                                  <th>Name</th>
+                                  <th>Type</th>
+                                   <th>Image</th>
+                                <th>Start Date</th>
+                                <th>Old End Date</th>
+                                <th>New End Date</th>
+                                <th>Marks</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th scope="row">1</th>
+                                  <td>VLMS18111</td>
+                                  <td>Giáo trình ASP.NET MVC 6</td>
+                                  <td>Book</td>
+                                  <td>Updating....</td>
+                                   <td>22-01-2017</td> 
+                                   <td>22-03-2017</td> 
+                                   <td>22-05-2017</td>                                   
+                                  <td>Sách in màu</td>
+                                    
+                                </tr>
+                                <tr>
+                                  <th scope="row">2</th>
+                                  <td>VLMS18112</td>
+                                  <td>Đĩa phim Tây Du Ký phần 2</td>
+                                  <td>CD/DVD</td>
+                                  <td>Updating....</td>
+                                   <td>23-02-2017</td> 
+                                 <td>22-04-2017</td>
+                                 <td>22-06-2017</td>
+                                  <td>Đĩa gốc sản xuất 2010</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">3</th>
+                                   <td>VLMS18113</td>
+                                  <td>Loa 4 tất 500W Arirang</td>
+                                  <td>Karaoke/Technology</td>
+                                  <td>Updating....</td>
+                                   <td>20-01-2017</td> 
+                                 <td>12-05-2017</td>
+                                 <td>12-06-2017</td>
+                                  <td>Loa chính hãng. Đã sử dụng 2 năm</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">4</th>
+                                   <td>VLMS19291</td>
+                                  <td>Laptop HP cũ</td>
+                                  <td>Laptop/Technology</td>
+                                  <td>Updating....</td>
+                                   <td>20-01-2017</td>  
+                                   <td>22-04-2017</td> 
+                                   <td>12-07-2017</td>
+                                  <td>Laptop cũ đã sử dụng 3 năm</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="tab_content4" aria-labelledby="profile-tab3">
+                         <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+                             <div id="collapseOne1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                          <div class="panel-body">
+                            <table class="table table-striped">
+                              <thead>
+                                <tr>
+                                <th>STT</th>
+                                  <th>ID</th>
+                                  <th>Name</th>
+                                  <th>Type</th>
+                                 
+                                  <th>Transfer To</th>
+                                   <th>Date</th>
+                                
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th scope="row">1</th>
+                                  <td>VLMS18111</td>
+                                  <td>Giáo trình ASP.NET MVC 6</td>
+                                  <td>Book</td>
+                                
+                                   <td>Lê Hồng Anh</td> 
+                                   <td>22-02-2017</td>                                   
+                                  
+                                </tr>
+                                <tr>
+                                  <th scope="row">2</th>
+                                  <td>VLMS18112</td>
+                                  <td>Đĩa phim Tây Du Ký phần 2</td>
+                                  <td>CD/DVD</td>
+                                  
+                                   <td>Nguyễn Tiến Dũng</td> 
+                                 <td>11-03-2017</td>
+                                 
+                                </tr>
+                                <tr>
+                                  <th scope="row">3</th>
+                                   <td>VLMS18113</td>
+                                  <td>Loa 4 tất 500W Arirang</td>
+                                  <td>Karaoke/Technology</td>
+                                 
+                                   <td>Đỗ Thanh Trúc</td> 
+                                 <td>12-01-2017</td>
+                                  
+                                </tr>
+                                <tr>
+                                  <th scope="row">4</th>
+                                   <td>VLMS19291</td>
+                                  <td>Laptop HP cũ</td>
+                                  <td>Laptop/Technology</td>
+                                  <td>Nguyễn Văn Tín</td>
+                                  
+                                   <td>22-02-2017</td> 
+                                  
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+        
+            
+
+
+
+
+
+            <!-- /page content -->
+
+            <!-- footer content -->
+            <footer>
+                <div class="pull-right">
+                    ©2017 All Rights Reserved. Privacy and Terms
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+            <!-- /footer content -->
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="../../vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="../../vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="../../vendors/nprogress/nprogress.js"></script>
+    <!-- Chart.js -->
+    <script src="../../vendors/Chart.js/dist/Chart.min.js"></script>
+    <!-- gauge.js -->
+    <script src="../../vendors/gauge.js/dist/gauge.min.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="../../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script src="../../vendors/iCheck/icheck.min.js"></script>
+    <!-- Skycons -->
+    <script src="../../vendors/skycons/skycons.js"></script>
+    <!-- Flot -->
+    <script src="../../vendors/Flot/jquery.flot.js"></script>
+    <script src="../../vendors/Flot/jquery.flot.pie.js"></script>
+    <script src="../../vendors/Flot/jquery.flot.time.js"></script>
+    <script src="../../vendors/Flot/jquery.flot.stack.js"></script>
+    <script src="../../vendors/Flot/jquery.flot.resize.js"></script>
+    <!-- Flot plugins -->
+    <script src="../../vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+    <script src="../../vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+    <script src="../../vendors/flot.curvedlines/curvedLines.js"></script>
+    <!-- DateJS -->
+    <script src="../../vendors/DateJS/build/date.js"></script>
+    <!-- JQVMap -->
+    <script src="../../vendors/jqvmap/dist/jquery.vmap.js"></script>
+    <script src="../../vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script src="../../vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="../../vendors/moment/min/moment.min.js"></script>
+    <script src="../../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="../../build/js/custom.min.js"></script>
+
+    <!-- My Cutom Scripts -->
+    <script src="../../build/js/custom-scripts.js"></script>
+
+</body>
+
+</html>
